@@ -18,6 +18,8 @@ from django.urls import path
 from apps.core.views import signup
 from apps.story.views import frontpage
 from django.contrib.auth import views
+from django.views.static import serve
+from django.conf.urls.static import url
 
 
 urlpatterns = [
@@ -26,4 +28,6 @@ urlpatterns = [
     # path('login/', views.LoginView.as_view(template_name = 'core/login.html'), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
     path('admin/', admin.site.urls),
+    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]
