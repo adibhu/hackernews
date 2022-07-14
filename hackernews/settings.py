@@ -27,7 +27,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-LOGOUT_REDIRECT_URL = '/'
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'frontpage'
+
+LOGOUT_REDIRECT_URL = 'frontpage'
 
 # Application definition
 
@@ -41,7 +44,8 @@ INSTALLED_APPS = [
 
     #own
 
-    'apps.core'
+    'apps.core',
+    'apps.story'
 ]
 
 MIDDLEWARE = [
@@ -80,8 +84,12 @@ WSGI_APPLICATION = 'hackernews.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD' : 'aditya1',
+        'HOST' : 'localhost',
+        'PORT' : '5432',
     }
 }
 
@@ -110,7 +118,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 

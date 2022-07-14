@@ -1,40 +1,14 @@
-{% extends 'core/base.html' %}
 
-{% block content %}
-    <div class="container">
-        <div class="columns">
-            <div class="column is-12">
-                <h1 class="title">Login</h1>
-                <form method="post" action=".">
-                    {% csrf_token %}
+<form class="site-form" method="post">
+    <h4>Login</h4>
+    {{ loginform.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="login">
+</form>
 
-                    {{ form.as_p }}
-                    
-                    <div class="field">
-                        <div class="control">
-                            <button class="button is_success">Login</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <div class="columns">
-            <div class="column is-12">
-                <h1 class="title">Create Account</h1>
-                <form method="post" action=".">
-                    {% csrf_token %}
-
-                    {{ form.as_p }}
-                    
-                    <div class="field">
-                        <div class="control">
-                            <button class="button is_success">create account</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-{% endblock %}
+<form class="site-form" method="post">
+    <h4>Create Account</h4>
+    {{ registrationform.as_p }}
+    {% csrf_token %}
+    <input type="submit" value="register">
+</form>
