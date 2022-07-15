@@ -18,3 +18,15 @@ class Story(models.Model):
 
     def __str__(self):
         return '%s' % self.title
+
+
+class Vote(models.Model):
+    story = models.ForeignKey(Story, related_name='votes', on_delete=models.CASCADE)
+    created_by = models.ForeignKey(User, related_name='votes', on_delete= models.CASCADE)
+
+    def save(self, *args, **kwargs):
+        self.story.number_of_votes = self.story.number_of_votes + 1
+        self.story.save()
+
+        super(Vote, self).save(*args, **kwargs)
+

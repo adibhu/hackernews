@@ -1,7 +1,7 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from .forms import StoryForm
 from django.contrib.auth.decorators import login_required
-from .models import Story
+from .models import Story, Vote
 import datetime
 # Create your views here.
 
@@ -13,6 +13,14 @@ def frontpage(request):
 def newest(request):
     stories = Story.objects.all()[:200]
     return render(request, 'story/newest.html', {'stories':stories})
+
+@login_required
+def vote(request, story_id):
+    story = get_object_or_404(Story, pk=story_id)
+    #47
+    # if not Vote.objects.filter(created_by=request.user, story=story):
+    vote = Vote.objects.create(story=story, created_by = request.user)
+    return redirect('frontpage')
 
 @login_required
 def submit(request):
