@@ -16,7 +16,19 @@
 
     <div class="columns">
         <div class="column is-12">
-            list of submissions will apear here
+            <table class="table is-striped is-fullwidth">
+                <tbody>
+                    {% for story in stories %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>
+                                <a href="{{ story.url }}" target="_blank">{{ story.title }}</a>
+                                <p> {{ story.number_of_votes }} points by {{story.created_by.username}} {{ story.created_at|timesince}} ago</p>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
