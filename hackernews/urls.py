@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from apps.core.views import signup
-from apps.story.views import frontpage, submit
+from apps.story.views import frontpage, submit, newest
 from django.contrib.auth import views
 from django.views.static import serve
 # from django.conf.urls.static import url
@@ -25,6 +25,7 @@ from django.views.static import serve
 urlpatterns = [
     path('', frontpage, name='frontpage'),
     path('submit/', submit, name='submit'),
+    path('newest/', newest, name='newest'),
     path('signup/', signup, name='signup'),
     path('signup/', views.LoginView.as_view(template_name = 'core/signup.html'), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),

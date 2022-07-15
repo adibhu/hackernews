@@ -10,7 +10,9 @@ def frontpage(request):
     stories = Story.objects.filter(created_at__gte=date_from).order_by('-number_of_votes')[:30]
     return render(request, 'story/frontpage.html', {'stories' : stories})
 
-
+def newest(request):
+    stories = Story.objects.all()[:200]
+    return render(request, 'story/newest.html', {'stories':stories})
 
 @login_required
 def submit(request):

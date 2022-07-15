@@ -1,0 +1,38 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<!-- {% if user.is_authenticated %}
+<a href="{% url 'logout' %}" class="button is-danger">Log Out</a>
+{% else %}
+<a href="{% url 'signup' %}" class="button is-success"><strong>Sign up</strong></a>
+
+{% endif %} -->
+<div class="container">
+    <div class="columns">
+        <div class="column is-12">
+            <h1 class="title">welcome</h1>
+        </div>
+    </div>
+
+    <div class="columns">
+        <div class="column is-12">
+            <table class="table is-striped is-fullwidth">
+                <tbody>
+                    {% for story in stories %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>
+                                <a href="{{ story.url }}" target="_blank">{{ story.title }}</a>
+                                <p> {{ story.number_of_votes }} points by {{story.created_by.username}} {{ story.created_at|timesince}} ago</p>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
