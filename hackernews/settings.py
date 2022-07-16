@@ -84,10 +84,8 @@ WSGI_APPLICATION = 'hackernews.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 import dj_database_url
-local_db = 'postgres://postgres:aditya1@localhost/postgres'
-DATABASES = {'default': dj_database_url.config(default=local_db)}
 
-# DATABASES = {'default': dj_database_url.config(default=os.environ['DATABASE_URL'])}
+DATABASES = {'default': dj_database_url.config(default='postgres://eoaoxdobbmftih:d83a269f7f3f67c26964b150afac78bef36819f579c2ce8bf18526a3bcfbbeed@ec2-54-152-28-9.compute-1.amazonaws.com:5432/ddfit97br7offt:bar@localhost:5432/postgres')}
 
 # DATABASES = {
 #     'default': {
