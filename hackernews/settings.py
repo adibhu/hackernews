@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['codingnews.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','codingnews.herokuapp.com']
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'frontpage'
@@ -85,15 +85,25 @@ WSGI_APPLICATION = 'hackernews.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'postgres',
+    #     'USER': 'postgres',
+    #     'PASSWORD' : 'aditya1',
+    #     'HOST' : 'localhost',
+    #     'PORT' : '5432',
+    # }
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD' : 'aditya1',
-        'HOST' : 'localhost',
+        'NAME': 'ddfit97br7offt',
+        'USER': 'eoaoxdobbmftih',
+        'PASSWORD' : 'd83a269f7f3f67c26964b150afac78bef36819f579c2ce8bf18526a3bcfbbeed',
+        'HOST' : 'ec2-54-152-28-9.compute-1.amazonaws.com',
         'PORT' : '5432',
     }
 }
+
+
 
 
 # Password validation
