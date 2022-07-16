@@ -10,14 +10,9 @@
 <div class="container">
     <div class="columns">
         <div class="column is-12">
-            <h1 class="title">{{ story.title  }}</h1>
-            <h2 class="subtitle">{{ story.number_of_votes }} points</h2>
-            <strong>By: </strong> {{ strory.created_by.username }} {{ story.created_at | timesince}} ago <br>
-            <strong>Visit:</strong><a href="{{ story.url }}" target="_blank">{{ story.url }}</a>
-
-            <hr> 
+            <h4 class="title"><a href="{{ story.url }}">{{ story.title }}</a></h4>
+            <h6 class="subtitle"><small><a href="{% url 'vote' story.id %}?next_page=story">Vote</a> {{ story.number_of_votes }} points By: {{ story.created_by.username }} {{ story.created_at | timesince}} ago </small><br></h6>
             
-            <a href="{% url 'vote' story.id %}?next_page=story">Vote</a>
         </div>
     </div>
 
