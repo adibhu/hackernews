@@ -30,3 +30,14 @@ class Vote(models.Model):
 
         super(Vote, self).save(*args, **kwargs)
 
+class Comment(models.Model):
+    story = models.ForeignKey(Story, related_name='comments', on_delete=models.CASCADE)
+    body = models.TextField()
+
+    created_by = models.ForeignKey(User, related_name='comments', on_delete= models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-created_at']
+        
+
