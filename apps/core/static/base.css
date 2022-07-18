@@ -4,11 +4,60 @@
         width: 85%;
         left: 7%;
     }
+    .main-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #F6F6EF;
+        position: relative;
+        
+    }
+    .navbar{
+        background-color: #ff6600;
+        /* width: 85%; */
+        padding: 0.15%;
+    }
+    .navbar-items{
+        color: black;
+    }
+    .navbar-menu{
+        display: flex;
+        gap: 5%;
+    }
     .navbar-brand{
         display: flex;
         gap: 78%;
     }
+    .login{
+        left: 80%;
+    }
+    .menu{
+        display: flex;
+        padding: 0.15%;
+    }
+    a{
+        color: black;
+        font-size: small;
+    }
+    a:link { text-decoration: none; }
+    
+    a:visited { text-decoration: none; }
+    
+    a:hover { text-decoration: none; }
+    
+    a:active { text-decoration: none; }
+    
+    /* .table-content{
+        display: flex;
+        justify-content: center;
+        width: 85%;
+    } */
+    
+    .small{
+        font-size: xx-small;
+    }
 }
+@media(max-width:600px){
 .frontpage{
     position: relative;
     width: 100%;
@@ -64,4 +113,5 @@ a:active { text-decoration: none; }
 
 .small{
     font-size: xx-small;
+}
 }
