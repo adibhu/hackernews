@@ -14,9 +14,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from apps.core.views import signup
 from apps.story.views import frontpage, submit, newest, vote, story
+from apps.userprofile.views import userprofile, votes, submissions
 from django.contrib.auth import views
 from django.views.static import serve
 # from django.conf.urls.static import url
@@ -32,6 +33,9 @@ urlpatterns = [
     path('signup/', views.LoginView.as_view(template_name = 'core/signup.html'), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
     path('admin/', admin.site.urls),
+    path('<str:username>/', userprofile, name='userprofile'),
+    path('<str:username>/votes/', votes, name='votes'),
+    path('<str:username>/submissions/', submissions, name='submissions'),
     # url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), 
     # url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
 ]

@@ -11,7 +11,7 @@
     <div class="columns">
         <div class="column is-12">
             <h4 class="title"><a href="{{ story.url }}">{{ story.title }}</a></h4>
-            <h6 class="subtitle"><small><a href="{% url 'vote' story.id %}?next_page=story">Vote</a> {{ story.number_of_votes }} points By: {{ story.created_by.username }} {{ story.created_at | timesince}} ago </small><br></h6>
+            <h6 class="subtitle"><small><a href="{% url 'vote' story.id %}?next_page=story">Vote</a> {{ story.number_of_votes }} points By: <span> <a href="{% url 'userprofile' story.created_by.username %}"> </span> {{ story.created_by.username }}</a> {{ story.created_at | timesince}} ago </small><br></h6>
             
         </div>
     </div>

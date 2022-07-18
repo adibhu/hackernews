@@ -26,8 +26,10 @@
                     <div class="menu">
                         <a href="/" class="navbar-item"><strong>Hacker News</strong></a>
                         <a href="{% url 'newest' %}" class="navbar-item">New</a>
-                        <span>|</span>
+                        <span>| </span>
                         <a href="{% url 'submit' %}" class="navbar-item">Submit</a>
+                        <span>| </span>
+
                     </div>
                     <span class="login">
                         {% if user.is_authenticated %}

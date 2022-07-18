@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     #own
 
     'apps.core',
-    'apps.story'
+    'apps.story',
+    'apps.userprofile'
 ]
 
 MIDDLEWARE = [

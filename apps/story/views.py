@@ -3,6 +3,8 @@ from .forms import StoryForm, CommentForm
 from django.contrib.auth.decorators import login_required
 from .models import Story, Vote, Comment
 import datetime
+from django.contrib.auth.models import User
+
 # Create your views here.
 
 def frontpage(request):
@@ -65,3 +67,4 @@ def submit(request):
         form = StoryForm()
 
     return render(request, 'story/submit.html', {'form':form})
+

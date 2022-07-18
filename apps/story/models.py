@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 class Story(models.Model):
     title = models.CharField(max_length=255)
     url = models.URLField()
+    text = models.TextField(max_length=255, default='')
 
     number_of_votes = models.IntegerField(default=1)
 
