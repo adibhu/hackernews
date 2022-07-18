@@ -1,8 +1,17 @@
 @media(min-width:998px){
+    .frontpage{
+        position: relative;
+        width: 85%;
+        left: 7%;
+    }
+    .navbar-brand{
+        display: flex;
+        gap: 78%;
+    }
+}
 .frontpage{
     position: relative;
-    width: 85%;
-    left: 7%;
+    width: 100%;
 }
 .main-container{
     display: flex;
@@ -26,7 +35,7 @@
 }
 .navbar-brand{
     display: flex;
-    gap: 78%;
+    gap: 40%;
 }
 .login{
     left: 80%;
@@ -55,5 +64,4 @@ a:active { text-decoration: none; }
 
 .small{
     font-size: xx-small;
-}
 }
