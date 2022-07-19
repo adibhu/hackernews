@@ -11,7 +11,7 @@
                             <td>{{ forloop.counter }}</td>
                             <td>
                                 <a href="{{ story.url }}" target="_blank">{{ story.title }}</a>
-                                <p> {{ story.number_of_votes }} points by {{story.created_by.username}} {{ story.created_at|timesince}} ago</p>
+                                <small class="small"><p> {{ story.number_of_votes }} points by {{story.created_by.username}} {{ story.created_at|timesince}} ago</p></small>
                             </td>
                         </tr>
                     {% endfor %}

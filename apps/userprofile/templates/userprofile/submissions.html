@@ -8,11 +8,14 @@
                 <tbody>
                     {% for story in stories %}
                         <tr>
-                            <td>{{ forloop.counter }}</td>
+                            <td>{{ forloop.counter }} &nbsp;</td>
                             <td>
                                 <a href="{{ story.url }}" target="_blank">{{ story.title }}</a>
-                                <p> {{ story.number_of_votes }} points by {{story.created_by.username}} {{ story.created_at|timesince}} ago</p>
-                            </td>
+                                <small class="small">
+                                    <p> {{ story.number_of_votes }} points by <a href="{% url 'userprofile' story.created_by.username %}"> {{story.created_by.username}} </a> {{ story.created_at|timesince}} ago
+                                        <a href="{% url 'vote' story.id %}">Vote</a>
+                                        <a href="{% url 'story' story.id %}">Discuss</a>
+                                    </p>                            </td>
                         </tr>
                     {% endfor %}
                 </tbody>
