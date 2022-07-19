@@ -15,26 +15,31 @@
     .navbar{
         background-color: #ff6600;
         /* width: 85%; */
-        padding: 0.15%;
+        /* padding: 0.05%; */
     }
     .navbar-items{
         color: black;
     }
-    .navbar-menu{
+    /* .navbar-menu{
         display: flex;
         gap: 5%;
-    }
+    } */
     .navbar-brand{
         display: flex;
-        gap: 78%;
+        gap: 74%;
     }
     .login{
         left: 80%;
+        padding: 0.05%;
     }
     .menu{
         display: flex;
         padding: 0.15%;
     }
+    .menu :first-child{
+        width: 130px;
+    }
+
     a{
         color: black;
         font-size: small;
