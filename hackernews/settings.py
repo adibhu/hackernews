@@ -87,22 +87,22 @@ WSGI_APPLICATION = 'hackernews.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD' : 'aditya1',
-        'HOST' : 'localhost',
-        'PORT' : '5432',
-    }
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': 'ddfit97br7offt',
-    #     'USER': 'eoaoxdobbmftih',
-    #     'PASSWORD' : 'd83a269f7f3f67c26964b150afac78bef36819f579c2ce8bf18526a3bcfbbeed',
-    #     'HOST' : 'ec2-54-152-28-9.compute-1.amazonaws.com',
+    #     'NAME': 'postgres',
+    #     'USER': 'postgres',
+    #     'PASSWORD' : 'aditya1',
+    #     'HOST' : 'localhost',
     #     'PORT' : '5432',
     # }
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'ddfit97br7offt',
+        'USER': 'eoaoxdobbmftih',
+        'PASSWORD' : 'd83a269f7f3f67c26964b150afac78bef36819f579c2ce8bf18526a3bcfbbeed',
+        'HOST' : 'ec2-54-152-28-9.compute-1.amazonaws.com',
+        'PORT' : '5432',
+    }
 }
 
 
