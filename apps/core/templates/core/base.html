@@ -25,10 +25,16 @@
                 <div class="navbar-brand">
                     <div class="menu">
                         <a href="/" class="navbar-item"><strong>Hacker News</strong></a>
-                        <a href="{% url 'newest' %}" class="navbar-item">  New</a>
-                        <span>| </span>
-                        <a href="{% url 'submit' %}" class="navbar-item">Submit</a>
-                        <span>| </span>
+                        <a href="{% url 'newest' %}" class="navbar-item">New&nbsp;</a>
+                        <span>| &nbsp;</span>
+                        <a href="{% url 'comments' %}" class="navbar-item">Comments&nbsp;</a>
+                        <span>| &nbsp;</span>
+                        <a href="{% url 'submit' %}" class="navbar-item">Submit&nbsp;</a>
+                        <span>| &nbsp;</span>
+                        <a href="{% url 'ask' %}" class="navbar-item">Ask&nbsp;</a>
+                        <span>| &nbsp;</span>
+                        <a href="{% url 'show' %}" class="navbar-item">Show&nbsp;</a>
+                        <span>| &nbsp;</span>
 
                     </div>
                     <span class="login">

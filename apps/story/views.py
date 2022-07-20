@@ -70,3 +70,18 @@ def submit(request):
         form = StoryForm()
 
     return render(request, 'story/submit.html', {'form': form})
+
+def ask(request):
+    stories = Story.objects.all()[:200]
+    return render(request, 'story/ask.html', {'stories': stories})
+
+def show(request):
+    stories = []
+    for story in Story.objects.all():
+        if str(story)[:7] == 'Show HN':
+            stories.append(story)
+    return render(request, 'story/show.html', {'stories': stories})
+
+def comments(request):
+    stories = Story.objects.all()[:200]
+    return render(request, 'story/comments.html', {'stories': stories})

@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from apps.core.views import signup
-from apps.story.views import frontpage, submit, newest, vote, story
+from apps.story.views import frontpage, submit, newest, vote, story, ask, show, comments
 from apps.userprofile.views import userprofile, votes, submissions
 from django.contrib.auth import views
 from django.views.static import serve
@@ -29,6 +29,9 @@ urlpatterns = [
     path('s/<int:story_id>/vote/', vote, name='vote'),
     path('s/<int:story_id>/', story, name='story'),
     path('newest/', newest, name='newest'),
+    path('comments/', comments, name='comments'),
+    path('ask/', ask, name='ask'),
+    path('show/', show, name='show'),
     path('signup/', signup, name='signup'),
     path('signup/', views.LoginView.as_view(template_name = 'core/signup.html'), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
