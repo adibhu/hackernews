@@ -83,5 +83,21 @@ def show(request):
     return render(request, 'story/show.html', {'stories': stories})
 
 def comments(request):
-    stories = Story.objects.all()[:200]
+    stories = Comment.objects.all()[:200]
     return render(request, 'story/comments.html', {'stories': stories})
+
+def search(request):
+    query = request.GET.get('query', '')
+
+    if len(query) > 0:
+        stories = Story.objects.filter(title__icontains=query)
+    else:
+        stories =[]
+
+    return render(request, 'story/search.html', {'stories': stories, 'query': query})
+
+def threads(request, username):
+    user = get_object_or_404(User, username=username)
+    threads = user.stories.all()
+
+    return render(request, 'story/threads.html', {'user':user, 'threads':threads})

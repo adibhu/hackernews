@@ -26,10 +26,10 @@
     } */
     .navbar-brand{
         display: flex;
-        gap: 74%;
+        gap: 46%;
     }
     .login{
-        left: 80%;
+        left: 53%;
         padding: 0.05%;
     }
     .menu{

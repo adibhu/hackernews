@@ -29,6 +29,11 @@
                         <span>| &nbsp;</span>
                         <a href="{% url 'comments' %}" class="navbar-item">Comments&nbsp;</a>
                         <span>| &nbsp;</span>
+                        {% if user.is_authenticated %}
+                        <a href="{% url 'threads' user.username %}" class="navbar-item">Threads&nbsp;</a>
+                        <span>| &nbsp;</span>
+                        {% else %}
+                        {% endif %}
                         <a href="{% url 'submit' %}" class="navbar-item">Submit&nbsp;</a>
                         <span>| &nbsp;</span>
                         <a href="{% url 'ask' %}" class="navbar-item">Ask&nbsp;</a>
