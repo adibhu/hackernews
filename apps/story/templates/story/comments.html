@@ -2,18 +2,19 @@
 
 {% block content %}
 {% for comment in stories %}
-                <article>
-                    <div>
-                        <p>
-                            <small>{{ comment.created_by.username }}</small><small>&nbsp;{{ comment.created_at | timesince}} ago on:<a href="{{ comment.url }}" target="_blank">{{ comment.story.title }}</a>
-                        </small> <br>
-                            <p class="small">{{ comment.body }}</p>
-                        </p>
-                    </div>
-                </article>
-                {% empty %}
-                <p>No comments yet</p>
-                {% endfor %}
+<article>
+    <div>
+        <p>
+            <small>{{ comment.created_by.username }}</small><small>&nbsp;{{ comment.created_at | timesince}} ago on:<a
+                    href="{{ comment.url }}" target="_blank">{{ comment.story.title }}</a>
+            </small> <br>
+        <p class="small">{{ comment.body }}</p>
+        </p>
+    </div>
+</article>
+{% empty %}
+<p>No comments yet</p>
+{% endfor %}
 
 
 

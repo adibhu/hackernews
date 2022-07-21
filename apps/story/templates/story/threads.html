@@ -2,26 +2,39 @@
 
 {% block content %}
 
-    <div class="columns">
-        <div class="column is-12">
-            <table class="table is-striped is-fullwidth">
-                <tbody>
-                    {% for story in stories %}
-                        <tr>
-                            <td>{{ forloop.counter }} &nbsp;</td>
-                            <td>
-                                <a href="{{ story.url }}" target="_blank">{{ story.title }}</a>
-                                <small class="small">
-                                    <p> {{ story.number_of_votes }} points by <a href="{% url 'userprofile' story.created_by.username %}"> {{story.created_by.username}} </a> {{ story.created_at|timesince}} ago
-                                        <a href="{% url 'vote' story.id %}">Vote</a>
-                                        <a href="{% url 'story' story.id %}">Discuss</a>
-                                    </p>                            </td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+<div class="columns">
+    <div class="column is-12">
+        <table class="table is-striped is-fullwidth">
+            <tbody>
+                {% for story in stories %}
+                <tr>
+                    <td>{{ forloop.counter }} &nbsp;</td>
+                    <td>
+                        <a href="{{ story.url }}" target="_blank">{{ story.title }}</a>
+                        <small class="small">
+                            <p> {{ story.number_of_votes }} points by <a
+                                    href="{% url 'userprofile' story.created_by.username %}">
+                                    {{story.created_by.username}} </a> {{ story.created_at|timesince}} ago
+                                <a href="{% url 'vote' story.id %}">Vote</a>
+                                <a href="{% url 'story' story.id %}">Discuss</a>
+                            </p>
+                    </td>
+                </tr>
+                {% endfor %}
+                <div>
+                    <form method="get" action="{% url 'search' %}" id="search">
+                        <div class="control">
+                        <input type="text" placeholder="search..." name="query">
+                        </div>
+                    </form>
+                </div>
+                <div class="control">
+                    <button form="search">search</button>
+                </div>
+            </tbody>
+        </table>
     </div>
+</div>
 </div>
 
 
